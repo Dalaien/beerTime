@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact - {{ parent() }} {% endblock %}
+      
+
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {% endblock %}
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>Hello, vous pouvez nous contacter ici! ✅</h1>
+
+
+    <span>Notre adresse: <a href='https://www.google.fr/maps/place/Rue+de+Rivoli,+59800+Lille/@50.6363288,3.0900431,17z/data=!3m1!4b1!4m5!3m4!1s0x47c2d5f8db0b652f:0xb0b0217a9ad6f79e!8m2!3d50.6363254!4d3.0922371'> 256 rue de Rivoli</a></span><br>
+    <img src="{{ asset('images/addresse.png') }}" alt='plan pour acceder à nos locaux'><br>
+    <span> Notre téléphone: <a href="tel:+33500000000">03.20.00.00.00</a></span>
+</div>
+{% endblock %}

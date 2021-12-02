@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <a href="{{ path('main_index')}}" class="title">
+            <img src="{{ asset('logo/logo.svg') }}" alt="logo beertime">
+                BeerTime
+            </a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ path('event_list')}}">Nos événements</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_about')}}">A propos</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="account">
+                <a href="#">
+                    Connexion
+                </a>
+            </div>
+        </header>
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            {% block footer %} <p>BeerTime - Tous droits réservés {{date()|date("Y")}}</p> {% endblock %}
+        </footer>
+    </body>
+</html>
